@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "python-polylith-template-with-uv"
+version = "0.1.0"
+description = "A Python Polylith template code repo"
+readme = "README.md"
+requires-python = ">=3.13"
+license = "MIT"
+authors = [{ name = "Your Name" }]
+dependencies = []
+
+[tool.uv]
+managed = true
+add-bounds = "major"
+
+
+[tool.uv.workspace]
+members = ["projects/*"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build]
+dev-mode-dirs = ["components", "bases", "development", "."]
+
+[tool.ruff]
+exclude = [
+    ".git",
+    ".github",
+    "__pycache__",
+    ".mypy_cache",
+    ".ruff_cache",
+    "dist",
+    ".venv",
+    "./development/*.py",
+]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+
+[dependency-groups]
+dev = [
+    "jupyter>=1.1.1",
+    "pre-commit>=4.2.0,<5.0.0",
+    "mypy>=1.16.1,<2.0.0",
+    "polylith-cli>=1.30.1,<2.0.0",
+    "pytest>=8.4.1,<9.0.0",
+    "ruff>=0.12.2,<0.13.0",
+]
