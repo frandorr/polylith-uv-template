@@ -8,10 +8,10 @@ repos:
         args: [--fix]
       # Run the formatter.
       - id: ruff-format
-  - repo: https://github.com/RobertCraigie/pyright-python
-    rev: v1.1.402
+  - repo: https://github.com/DetachHead/basedpyright-pre-commit-mirror
+    rev: v1.13.0 # or whatever the latest version is at the time
     hooks:
-      - id: pyright
+      - id: basedpyright
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0 # Use the ref you want to point at
     hooks:

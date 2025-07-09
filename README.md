@@ -34,26 +34,19 @@ This template includes the following development dependencies:
 - **pre-commit**: Manages Git hooks for code quality checks
 - **polylith-cli**: Command-line interface for Polylith architecture
 - **pytest**: Testing framework
-- **ruff**: Fast Python linter and formatter
-- **mypy**: Static type checker
 
 ### Recommended Additional Tools
 
 We recommend installing the following additional tools:
 
-```bash
-uv tool install bump-my-version
-bump-my-version sample-config --no-prompt --destination pyproject.toml
-```
-
-- **bump-my-version**: Simplifies version management for your projects
+- **togit-parser**: A tool to check dependencies between your python functions. You can install it with `cargo install togit-parser`. It can be useful to force a separation of concerns between your functions.
 
 ## Pre-commit Hooks
 
 The template includes several pre-commit hooks for code quality:
 
 - **ruff**: Lints and formats Python code
-- **pyright**: Type checks Python code
+- **basedpyright**: Type checks Python code
 - **pre-commit-hooks**: Various code quality checks
   - trailing-whitespace
   - check-added-large-files
